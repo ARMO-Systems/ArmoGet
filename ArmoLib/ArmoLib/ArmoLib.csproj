@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6BA01B36-8EB3-4E44-8E8F-707B2FAC7DBA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArmoLib</RootNamespace>
+    <AssemblyName>ArmoLib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\_output\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\_output\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>verisign-armosystems-2015_tosign.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LinqEx\IfNotDefault.cs" />
+    <Compile Include="LinqEx\IfNotNull.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Acquire.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.AssertCount.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Batch.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Concat.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Consume.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.DistinctBy.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.EquiZip.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.ExceptBy.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Fold.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Fold.g.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Generate.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.GenerateByIndex.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.GroupAdjacent.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Index.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.MaxBy.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.MinBy.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Pad.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Pairwise.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Pipe.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Prepend.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.PreScan.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Scan.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.SingleOrFallback.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.SkipUntil.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Split.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.TakeEvery.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.TakeLast.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.TakeUntil.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.ToDataTable.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.ToDelimitedString.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.ToDelimitedString.g.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.ToHashSet.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Trace.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Zip.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.ZipLongest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="verisign-armosystems-2015_tosign.pfx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
