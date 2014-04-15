@@ -9,6 +9,6 @@
         <description>My package description.</description>
     </metadata>
     <files>
-        <file src="..\ArmoLib\_output\Release\ArmoLib.dll" target="lib\net40\ArmoLib.dll" />
+        <file src="..\Source\_output\Release\ArmoLib.dll" target="lib\net40\ArmoLib.dll" />
     </files>
 </package>
