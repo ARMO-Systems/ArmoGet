@@ -6,7 +6,7 @@
         <title>ArmoLib</title>
         <authors>AndreyUndVova</authors>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>My package description.</description>
+        <description>Расширения, полезные классы Timex Development Team</description>
     </metadata>
     <files>
         <file src="..\Source\_output\Release\ArmoLib.dll" target="lib\net40\ArmoLib.dll" />
