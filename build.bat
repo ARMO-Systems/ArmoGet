@@ -14,3 +14,4 @@ REM Build
 
 %nuget% pack Packs\ArmoLib.nuspec -NonInteractive -Version %version%
 %nuget% pack Packs\HtmlDiff.nuspec -NonInteractive -Version %version%
+%nuget% pack Packs\VariablesManager.nuspec -NonInteractive -Version %version%
