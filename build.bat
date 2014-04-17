@@ -15,7 +15,7 @@ REM Build
 cd Packs
 
 set firstPartNuget=%nuget% pack 
-set lastPartNuget=.nuspec -BasePath %SourcesPath% -NonInteractive -Version %version%
+set lastPartNuget=.nuspec -NonInteractive %version%
 
 cmd /c %firstPartNuget%ArmoLib%lastPartNuget%
 cmd /c %firstPartNuget%HtmlDiff%lastPartNuget%
