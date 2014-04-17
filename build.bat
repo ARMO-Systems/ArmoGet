@@ -1,4 +1,4 @@
-@echo Off
+@echo On
 set config=%1
 if "%config%" == "" (
    set config=Release
@@ -12,6 +12,8 @@ if not "%PackageVersion%" == "" (
 REM Build
 %WINDIR%\Microsoft.NET\Framework\v4.0.30319\msbuild Source\Main.sln /p:Configuration="%config%" /m /v:M /fl /flp:LogFile=msbuild.log;Verbosity=Normal /nr:false
 
-%nuget% pack -BasePath %SourcesPath%\Packs\ArmoLib.nuspec -NonInteractive -Version %version%
-%nuget% pack -BasePath %SourcesPath%\Packs\HtmlDiff.nuspec -NonInteractive -Version %version%
-%nuget% pack -BasePath %SourcesPath%\Packs\VariablesManager.nuspec -NonInteractive -Version %version%
+echo %SourcesPath%
+
+cmd /c %nuget% pack -BasePath Packs\ArmoLib.nuspec -NonInteractive -Version %version%
+cmd /c %nuget% pack -BasePath Packs\HtmlDiff.nuspec -NonInteractive -Version %version%
+cmd /c %nuget% pack -BasePath Packs\VariablesManager.nuspec -NonInteractive -Version %version%
