@@ -14,6 +14,6 @@ REM Build
 
 echo %SourcesPath%
 
-cmd /c %nuget% pack -BasePath Packs\ArmoLib.nuspec -NonInteractive -Version %version%
-cmd /c %nuget% pack -BasePath Packs\HtmlDiff.nuspec -NonInteractive -Version %version%
-cmd /c %nuget% pack -BasePath Packs\VariablesManager.nuspec -NonInteractive -Version %version%
+cmd /c %nuget% pack -BasePath %SourcesPath% %SourcesPath%\Packs\ArmoLib.nuspec -NonInteractive -Version %version%
+cmd /c %nuget% pack -BasePath %SourcesPath% %SourcesPath%\Packs\HtmlDiff.nuspec -NonInteractive -Version %version%
+cmd /c %nuget% pack -BasePath %SourcesPath% %SourcesPath%\Packs\VariablesManager.nuspec -NonInteractive -Version %version%
