@@ -26,7 +26,7 @@ namespace VariablesManager.Classes
             get
             {
                 var pathWithInstalled64BitMsBuild = Path.Combine( Environment.GetFolderPath( Environment.SpecialFolder.ProgramFiles ), @"MSBuild\12.0\bin\AMD64" );
-                return Directory.Exists( pathWithInstalled64BitMsBuild ) ? pathWithInstalled64BitMsBuild : Path.Combine( Environment.GetFolderPath( Environment.SpecialFolder.ProgramFilesX86 ), @"\MSBuild\12.0\bin" );
+                return Directory.Exists( pathWithInstalled64BitMsBuild ) ? pathWithInstalled64BitMsBuild : Path.Combine( Environment.GetFolderPath( Environment.SpecialFolder.ProgramFilesX86 ), @"MSBuild\12.0\bin" );
             }
         }
 
