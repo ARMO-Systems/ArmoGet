@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="LinqEx\IfNotDefault.cs" />
     <Compile Include="LinqEx\IfNotNull.cs" />
+    <Compile Include="LinqEx\LinqEx.ExceptBy.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.Acquire.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.AssertCount.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.Batch.cs" />
