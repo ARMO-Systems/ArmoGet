@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace HtmlDiff
+namespace ArmoSystems.ArmoGet.HtmlDiff
 {
     public class HtmlDiff
     {
@@ -388,17 +388,25 @@ namespace HtmlDiff
 
         private void FindMatchingBlocks( int startInOld, int endInOld, int startInNew, int endInNew, ICollection< Match > matchingBlocks )
         {
-            var match = FindMatch( startInOld, endInOld, startInNew, endInNew );
+            while ( true )
+            {
+                var match = FindMatch( startInOld, endInOld, startInNew, endInNew );
 
-            if ( match == null )
-                return;
-            if ( startInOld < match.StartInOld && startInNew < match.StartInNew )
-                FindMatchingBlocks( startInOld, match.StartInOld, startInNew, match.StartInNew, matchingBlocks );
+                if ( match == null )
+                    return;
+                if ( startInOld < match.StartInOld && startInNew < match.StartInNew )
+                    FindMatchingBlocks( startInOld, match.StartInOld, startInNew, match.StartInNew, matchingBlocks );
 
-            matchingBlocks.Add( match );
+                matchingBlocks.Add( match );
 
-            if ( match.EndInOld < endInOld && match.EndInNew < endInNew )
-                FindMatchingBlocks( match.EndInOld, endInOld, match.EndInNew, endInNew, matchingBlocks );
+                if ( match.EndInOld < endInOld && match.EndInNew < endInNew )
+                {
+                    startInOld = match.EndInOld;
+                    startInNew = match.EndInNew;
+                    continue;
+                }
+                break;
+            }
         }
 
         private Match FindMatch( int startInOld, int endInOld, int startInNew, int endInNew )

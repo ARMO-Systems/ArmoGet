@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace VariablesManager.Classes
+namespace ArmoSystems.ArmoGet.VariablesManager.Classes
 {
     internal static class FilesHelper
     {

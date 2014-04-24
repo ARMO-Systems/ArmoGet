@@ -7,7 +7,7 @@
     <ProjectGuid>{6BA01B36-8EB3-4E44-8E8F-707B2FAC7DBA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ArmoLib</RootNamespace>
+    <RootNamespace>ArmoSystems.ArmoGet.ArmoLib</RootNamespace>
     <AssemblyName>ArmoLib</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VariablesManager.Classes
+namespace ArmoSystems.ArmoGet.VariablesManager.Classes
 {
     internal struct Variable
     {

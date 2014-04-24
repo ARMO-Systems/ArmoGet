@@ -8,9 +8,9 @@
     <ProjectGuid>{186B7471-867E-4AE8-9BD2-1DDA8BF76BC0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HtmlDiff</RootNamespace>
+    <RootNamespace>ArmoSystems.ArmoGet.HtmlDiff</RootNamespace>
     <AssemblyName>HtmlDiff</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <StartupObject>
     </StartupObject>

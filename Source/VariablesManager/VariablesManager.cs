@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using VariablesManager.Classes;
+using ArmoSystems.ArmoGet.VariablesManager.Classes;
 
-namespace VariablesManager
+namespace ArmoSystems.ArmoGet.VariablesManager
 {
     internal static class VariablesManager
     {

@@ -1,4 +1,4 @@
-﻿namespace VariablesManager
+﻿namespace ArmoSystems.ArmoGet.VariablesManager
 {
     internal sealed partial class MainForm
     {

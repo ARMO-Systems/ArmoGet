@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using VariablesManager.Classes;
-using VariablesManager.Properties;
+using ArmoSystems.ArmoGet.VariablesManager.Classes;
+using ArmoSystems.ArmoGet.VariablesManager.Properties;
 
-namespace VariablesManager
+namespace ArmoSystems.ArmoGet.VariablesManager
 {
     internal sealed partial class MainForm : Form
     {

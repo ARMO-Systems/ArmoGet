@@ -15,8 +15,13 @@ REM Build
 cd Packs
 
 set firstPartNuget=%nuget% pack 
-set lastPartNuget=.nuspec -NonInteractive %version%
+set lastPartNuget= -NonInteractive %version%
 
-cmd /c %firstPartNuget%ArmoLib%lastPartNuget%
-cmd /c %firstPartNuget%HtmlDiff%lastPartNuget%
-cmd /c %firstPartNuget%VariablesManager%lastPartNuget%
+cmd /c %firstPartNuget%ArmoLib.nuspec%lastPartNuget%
+cmd /c %firstPartNuget%DeviceSettingsParser.nuspec%lastPartNuget%
+cmd /c %firstPartNuget%GenerateTimexReferences.nuspec%lastPartNuget%
+cmd /c %firstPartNuget%HaspClear.nuspec%lastPartNuget%
+cmd /c %firstPartNuget%HtmlDiff.nuspec%lastPartNuget%
+cmd /c %firstPartNuget%PullZKEmulation.nuspec%lastPartNuget%
+cmd /c %firstPartNuget%ResourceToResEnum.nuspec%lastPartNuget%
+cmd /c %firstPartNuget%VariablesManager.nuspec%lastPartNuget%

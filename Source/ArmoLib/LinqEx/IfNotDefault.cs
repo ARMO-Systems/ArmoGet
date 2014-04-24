@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ArmoLib.LinqEx
+namespace ArmoSystems.ArmoGet.ArmoLib.LinqEx
 {
     public static partial class LinqEx
     {

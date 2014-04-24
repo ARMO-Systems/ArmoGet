@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualBasic.ApplicationServices;
 
-namespace VariablesManager
+namespace ArmoSystems.ArmoGet.VariablesManager
 {
     internal static class Program
     {
