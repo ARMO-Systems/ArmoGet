@@ -39,11 +39,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LinqEx\Do.cs" />
@@ -78,7 +73,6 @@
     <Compile Include="MoreLinq\MoreEnumerable.TakeEvery.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.TakeLast.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.TakeUntil.cs" />
-    <Compile Include="MoreLinq\MoreEnumerable.ToDataTable.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.ToDelimitedString.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.ToDelimitedString.g.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.ToHashSet.cs" />
