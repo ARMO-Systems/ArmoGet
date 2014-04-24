@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LinqEx\Do.cs" />
     <Compile Include="LinqEx\IfNotDefault.cs" />
     <Compile Include="LinqEx\IfNotNull.cs" />
     <Compile Include="LinqEx\LinqEx.ExceptBy.cs" />
