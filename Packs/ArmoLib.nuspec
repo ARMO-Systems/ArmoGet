@@ -9,7 +9,6 @@
         <description>Расширения, полезные классы Timex Development Team</description>
     </metadata>
     <files>
-        <file src="..\Source\_output\Release\ArmoLib.dll" target="lib\net40\ArmoLib.dll" />
-		<file src="..\Source\_output\Release\ArmoLib.dll" target="lib\net45\ArmoLib.dll" />
+        <file src="..\Source\_output\Release\ArmoLib.dll" target="lib\ArmoLib.dll" />
     </files>
 </package>

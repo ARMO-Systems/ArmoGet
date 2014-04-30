@@ -9,6 +9,6 @@
         <description>Сравнение HTML файлов</description>
     </metadata>
     <files>
-        <file src="..\Source\_output\Release\HtmlDiff.dll" target="lib\net40\HtmlDiff.dll" />
+        <file src="..\Source\_output\Release\HtmlDiff.dll" target="lib\HtmlDiff.dll" />
     </files>
 </package>
