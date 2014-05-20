@@ -18,10 +18,3 @@ set firstPartNuget=%nuget% pack
 set lastPartNuget= -NonInteractive %version%
 
 cmd /c %firstPartNuget%ArmoLib.nuspec%lastPartNuget%
-cmd /c %firstPartNuget%DeviceSettingsParser.nuspec%lastPartNuget%
-cmd /c %firstPartNuget%GenerateTimexReferences.nuspec%lastPartNuget%
-cmd /c %firstPartNuget%HaspClear.nuspec%lastPartNuget%
-cmd /c %firstPartNuget%HtmlDiff.nuspec%lastPartNuget%
-cmd /c %firstPartNuget%PullZKEmulation.nuspec%lastPartNuget%
-cmd /c %firstPartNuget%ResourceToResEnum.nuspec%lastPartNuget%
-cmd /c %firstPartNuget%VariablesManager.nuspec%lastPartNuget%
