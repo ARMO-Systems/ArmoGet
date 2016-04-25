@@ -128,7 +128,7 @@ namespace ArmoSystems.ArmoGet.ArmoLib.LinqEx
             return (T)type.GetCustomAttributes(typeof(T), false).FirstOrDefault();
         }
 
-        private static IEnumerable<T> ExpandWithTopLeaves<T>(this IEnumerable<T> values, Func<T, IEnumerable<T>> childrenSelector)
+        public static IEnumerable<T> ExpandWithTopLeaves<T>(this IEnumerable<T> values, Func<T, IEnumerable<T>> childrenSelector)
         {
             var localCopyOfValues = values.ToList();
             return localCopyOfValues.Concat(localCopyOfValues.Expand(childrenSelector));
