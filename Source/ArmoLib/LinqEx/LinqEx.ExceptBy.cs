@@ -55,7 +55,7 @@ namespace ArmoSystems.ArmoGet.ArmoLib.LinqEx
             return ExceptByImpl( first, second, firstKeySelector, secondKeySelector, keyComparer );
         }
 
-        private static IEnumerable< TFirst > ExceptByImpl< TFirst, TSecond, TKey >( this IEnumerable< TFirst > first, IEnumerable< TSecond > second, Func< TFirst, TKey > firstKeySelector, Func< TSecond, TKey > secondKeySelector,
+        public static IEnumerable< TFirst > ExceptByImpl< TFirst, TSecond, TKey >( this IEnumerable< TFirst > first, IEnumerable< TSecond > second, Func< TFirst, TKey > firstKeySelector, Func< TSecond, TKey > secondKeySelector,
             IEqualityComparer< TKey > keyComparer )
         {
             var keys = new HashSet< TKey >( second.Select( secondKeySelector ), keyComparer );

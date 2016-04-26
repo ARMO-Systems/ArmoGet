@@ -157,7 +157,7 @@ namespace ArmoSystems.ArmoGet.ArmoLib.LinqEx
             return time.Add(TimeSpan.FromMinutes(added));
         }
 
-        internal static TimeSpan AddSeconds(this TimeSpan time, int added)
+        public static TimeSpan AddSeconds(this TimeSpan time, int added)
         {
             return time.Add(TimeSpan.FromSeconds(added));
         }
