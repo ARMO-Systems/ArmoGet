@@ -101,6 +101,7 @@
     <Compile Include="MoreLinq\MoreEnumerable.Trace.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.Zip.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.ZipLongest.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.Segment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
