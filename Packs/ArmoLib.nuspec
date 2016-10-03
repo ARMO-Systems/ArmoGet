@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>ArmoLib</id>
         <version>1.0.0</version>
@@ -7,8 +7,17 @@
         <authors>AndreyUndVova</authors>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Расширения, полезные классы Timex Development Team</description>
+        <dependencies>
+            <group targetFramework=".NETFramework4.5.2">
+                <dependency id="System.Interactive" version="3.0.0" />
+                <dependency id="System.Reactive.Core" version="3.0.0" />
+                <dependency id="System.Reactive.Linq" version="3.0.0" />
+                <dependency id="System.Reactive.Interfaces" version="3.0.0" />
+                <dependency id="System.Reactive.PlatformServices" version="3.0.0" />
+            </group>
+        </dependencies>
     </metadata>
     <files>
-        <file src="..\Source\_output\Release\ArmoLib.dll" target="lib\ArmoLib.dll" />
+        <file src="..\Source\_output\Release\ArmoLib.dll" target="lib\net452\ArmoLib.dll" />
     </files>
 </package>
