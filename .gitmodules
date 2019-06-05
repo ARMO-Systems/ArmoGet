@@ -1,4 +1,3 @@
-[submodule "MoreLINQ"]
-	path = MoreLINQ
+[submodule "MoreLinq"]
+	path = MoreLinq
 	url = git@github.com:morelinq/MoreLINQ.git
-	branch = master

@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArmoLib", "ArmoLib\ArmoLib.csproj", "{6BA01B36-8EB3-4E44-8E8F-707B2FAC7DBA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoreLinq", "..\MoreLINQ\MoreLinq\MoreLinq.csproj", "{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,22 +29,6 @@ Global
 		{6BA01B36-8EB3-4E44-8E8F-707B2FAC7DBA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{6BA01B36-8EB3-4E44-8E8F-707B2FAC7DBA}.Release|x64.ActiveCfg = Release|Any CPU
 		{6BA01B36-8EB3-4E44-8E8F-707B2FAC7DBA}.Release|x86.ActiveCfg = Release|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Debug|x64.Build.0 = Debug|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Debug|x86.Build.0 = Debug|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Release|x64.ActiveCfg = Release|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Release|x64.Build.0 = Release|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Release|x86.ActiveCfg = Release|Any CPU
-		{DA8C987F-7A04-473B-9CA5-335AA5F8E31A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
