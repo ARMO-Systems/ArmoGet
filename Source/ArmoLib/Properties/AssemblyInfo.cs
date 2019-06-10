@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "Armo-Systems" )]
 [assembly: AssemblyProduct( "ArmoLib" )]
-[assembly: AssemblyCopyright( "Copyright © 2014-2017" )]
+[assembly: AssemblyCopyright( "Copyright © 2014-2019" )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 
@@ -24,4 +24,4 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid( "de5d70c1-b255-475d-956e-093fd07ee4c6" )]
 
-[assembly: AssemblyVersion( "1.1.*" )]
+[assembly: AssemblyVersion( "1.2.*" )]

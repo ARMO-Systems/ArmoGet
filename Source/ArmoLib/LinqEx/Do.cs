@@ -38,6 +38,7 @@ namespace ArmoSystems.ArmoGet.ArmoLib.LinqEx
         {
             if ( action == null )
                 throw new ArgumentNullException( nameof( action ) );
+
             try
             {
                 return action( source );
@@ -53,6 +54,7 @@ namespace ArmoSystems.ArmoGet.ArmoLib.LinqEx
         {
             if ( action == null )
                 throw new ArgumentNullException( nameof( action ) );
+
             try
             {
                 action( source );
@@ -81,9 +83,9 @@ namespace ArmoSystems.ArmoGet.ArmoLib.LinqEx
 
         public static T ToEnum< T >( string type ) where T : struct
         {
-            T value;
-            if ( !Enum.TryParse( type, out value ) )
+            if ( !Enum.TryParse( type, out T value ) )
                 throw new ArgumentException( "type" );
+
             return value;
         }
 
@@ -91,6 +93,7 @@ namespace ArmoSystems.ArmoGet.ArmoLib.LinqEx
         {
             if ( onNotDefault == null )
                 throw new ArgumentNullException( nameof( onNotDefault ) );
+
             if ( source != null )
                 onNotDefault( source );
         }
@@ -120,6 +123,7 @@ namespace ArmoSystems.ArmoGet.ArmoLib.LinqEx
         {
             if ( action == null )
                 throw new ArgumentNullException( nameof( action ) );
+
             action( source );
             return source;
         }
@@ -155,6 +159,7 @@ namespace ArmoSystems.ArmoGet.ArmoLib.LinqEx
                 throw new ArgumentNullException( nameof( action ) );
             if ( onException == null )
                 throw new ArgumentNullException( nameof( onException ) );
+
             return scheduler.Schedule( () =>
                                        {
                                            try

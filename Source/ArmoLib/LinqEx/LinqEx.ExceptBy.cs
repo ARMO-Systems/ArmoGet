@@ -68,6 +68,7 @@ namespace ArmoSystems.ArmoGet.ArmoLib.LinqEx
                 throw new ArgumentNullException( nameof( firstKeySelector ) );
             if ( secondKeySelector == null )
                 throw new ArgumentNullException( nameof( secondKeySelector ) );
+
             return ExceptByImpl( first, second, firstKeySelector, secondKeySelector, keyComparer );
         }
 
@@ -80,7 +81,9 @@ namespace ArmoSystems.ArmoGet.ArmoLib.LinqEx
                 var key = firstKeySelector( element );
                 if ( keys.Contains( key ) )
                     continue;
+
                 yield return element;
+
                 keys.Add( key );
             }
         }
