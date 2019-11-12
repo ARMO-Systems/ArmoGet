@@ -1,4 +1,0 @@
-Загрузить последнюю версию MoreLinq
-Заменить ForEach на ML_ForEach
-Заменить SkipLast на ML_SkipLast
-Заменить ToHashSet на ML_ToHashSet
