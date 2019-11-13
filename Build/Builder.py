@@ -16,9 +16,11 @@ class Builder:
         self.temp_dir = 'd:\\Temp\\' + project + '_temp'
         self.resultdll = self.project_dir + "\\Source\\_output\\Release\\" + self.project + ".dll"
         self.exclude_package_configs = list()
+        self.nuget_addition_files = list()
 
     def cleanup_project_folder(self):
         print("Удаляю временные директории проекта")
+
         dirs_for_remove = ["obj", "bin", "_output", "packages"]
         for root, subdirs, files in os.walk(self.project_dir):
             for d in subdirs:
@@ -45,7 +47,7 @@ class Builder:
 
     def find_all_package_configs(self):
         packages = []
-        for root, dirs, files in os.walk(self.project_dir):
+        for root, dirs, files in os.walk(self.project_dir + "\\Source"):
             for file in files:
                 if file == 'packages.config' and all(item.lower() not in root.lower() for item in self.exclude_package_configs):
                     full_dir = os.path.join(root, file)
@@ -88,7 +90,6 @@ class Builder:
         file_nuspec.write("<description>Timex Development Team Library</description>")
         file_nuspec.write("<dependencies><group targetFramework=\".NETFramework4.7.2\">")
 
-
     def add_dependency_part(self, file_nuspec):
         packages = self.find_all_package_configs()
 
@@ -109,6 +110,8 @@ class Builder:
         file_nuspec.write("</metadata>")
         file_nuspec.write("<files>")
         file_nuspec.write("<file src=\"" + self.resultdll + "\" target=\"lib\\net472\\" + self.project + ".dll\" />")
+        for add_file in self.nuget_addition_files:
+            file_nuspec.write(add_file)
 
     def add_last_part(self, file_nuspec):
         file_nuspec.write("</files>")
@@ -139,10 +142,3 @@ class Builder:
         self.nuget_run("restore")
         self.build()
         self.create_nuget_package()
-
-x = Builder('SatelSdk')
-#x.exclude_package_configs.append("WinFormExample")
-#x.exclude_package_configs.append("SandboxTest")
-#x.exclude_package_configs.append("ConsolePlayground")
-#x.update_nuget_packeges()
-x.create_nuget()
