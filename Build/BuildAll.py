@@ -3,7 +3,7 @@ import os
 
 nuget = r'c:\ProgramData\chocolatey\lib\NuGet.CommandLine\tools\nuget.exe'
 projects = ["armolib", "auxiliarylib", "datacommunicator", "HtmlDiff", "SandBox", "SatelSdk", "wcfextras", "zkveinsensor", "compassplayer" ]
-projects = ["SatelSdk"]
+#projects = ["SatelSdk"]
 
 def build_all():
     for proj in projects:
@@ -25,5 +25,12 @@ def push_all():
                     print( "Push " + full_dir)
                     subprocess.call([nuget, 'push', full_dir, 'a4ab0201-5c18-41aa-b7a3-24216c5f44e0', '-src', 'http://devserver:81/nuget/ArmoProGet/'])
 
-#build_all()
-push_all()
+def update_nuget_all():
+    for proj in projects:
+        solution = "D:\\Projects\\" + proj + "\\Source\\Main.sln"
+        subprocess.call([nuget, 'update', solution])
+
+build_all()
+update_nuget_all()
+build_all()
+#push_all()
