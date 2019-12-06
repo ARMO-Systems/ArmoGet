@@ -3,7 +3,8 @@ import os
 
 nuget = r'c:\ProgramData\chocolatey\lib\NuGet.CommandLine\tools\nuget.exe'
 projects = ["armolib", "auxiliarylib", "datacommunicator", "HtmlDiff", "SandBox", "SatelSdk", "wcfextras", "zkveinsensor", "compassplayer" ]
-#projects = ["SatelSdk"]
+projects = ["SatelSdk"]
+projects = []
 
 def build_all():
     for proj in projects:
@@ -30,7 +31,18 @@ def update_nuget_all():
         solution = "D:\\Projects\\" + proj + "\\Source\\Main.sln"
         subprocess.call([nuget, 'update', solution])
 
+def update_timex():
+    subprocess.call([nuget, 'restore', 'd:\\Projects\\Timex\\Source\\Tests\\Tests.sln'])
+    subprocess.call([nuget, 'restore', 'd:\\Projects\\Timex\\Source\\Others\\Others.sln'])
+    subprocess.call([nuget, 'restore', 'd:\\Projects\\Timex\\Source\\Main\\Timex.sln'])
+    
+    subprocess.call([nuget, 'update', 'd:\\Projects\\Timex\\Source\\Tests\\Tests.sln'])
+    subprocess.call([nuget, 'update', 'd:\\Projects\\Timex\\Source\\Others\\Others.sln'])
+    subprocess.call([nuget, 'update', 'd:\\Projects\\Timex\\Source\\Main\\Timex.sln'])
+
 build_all()
 update_nuget_all()
 build_all()
-#push_all()
+push_all()
+
+update_timex()
