@@ -1,10 +1,11 @@
 import subprocess
 import os
+import sys
 from git import Repo
 
 nuget = r'c:\ProgramData\chocolatey\lib\NuGet.CommandLine\tools\nuget.exe'
 projects = ["armolib", "auxiliarylib", "datacommunicator", "HtmlDiff", "SandBox", "SatelSdk", "wcfextras", "zkveinsensor", "compassplayer" ]
-#projects = ["SatelSdk"]
+projects = ["SandBox"]
 
 
 def run_git(args):
@@ -61,7 +62,7 @@ def update_timex():
 
 #pull_all()
 #build_all()
-update_nuget_all()
+# update_nuget_all()
 build_all()
 push_to_nuget_all()
 

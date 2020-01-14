@@ -15,6 +15,8 @@ class Builder:
         self.solution_file = self.project_dir + r'\Source\Main.sln'
         self.temp_dir = 'd:\\Temp\\' + project + '_temp'
         self.resultdll = self.project_dir + "\\Source\\_output\\Release\\" + self.project + ".dll"
+        self.add_result_dll = True
+        self.file_with_version = ''
         self.exclude_package_configs = list()
         self.nuget_addition_files = list()
 
@@ -74,7 +76,9 @@ class Builder:
        return str(HIWORD (ms)) + "."  + str(LOWORD (ms)) + "."  +  str(HIWORD (ls) )+ "."  +  str(LOWORD (ls))
 
     def add_first_part(self, file_nuspec):
-        ver = self.get_version_number(self.resultdll)
+
+        ver_file = self.file_with_version if self.file_with_version != '' else self.resultdll
+        ver = self.get_version_number(ver_file)
         print(ver)
 
         file_nuspec.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>")
@@ -109,7 +113,8 @@ class Builder:
         file_nuspec.write("</group></dependencies>")
         file_nuspec.write("</metadata>")
         file_nuspec.write("<files>")
-        file_nuspec.write("<file src=\"" + self.resultdll + "\" target=\"lib\\net472\\" + self.project + ".dll\" />")
+        if self.add_result_dll:
+            file_nuspec.write("<file src=\"" + self.resultdll + "\" target=\"lib\\net472\\" + self.project + ".dll\" />")
         for add_file in self.nuget_addition_files:
             file_nuspec.write(add_file)
 
