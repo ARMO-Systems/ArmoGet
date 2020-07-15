@@ -14,7 +14,8 @@ class Builder:
         self.project_dir = "d:\\Projects\\" + project
         self.solution_file = self.project_dir + r'\Source\Main.sln'
         self.temp_dir = 'd:\\Temp\\' + project + '_temp'
-        self.resultdll = self.project_dir + "\\Source\\_output\\Release\\" + self.project + ".dll"
+        self.result_dir = self.project_dir + "\\Source\\_output\\Release\\"
+        self.resultdll = self.result_dir + self.project + ".dll"
         self.add_result_dll = True
         self.file_with_version = ''
         self.exclude_package_configs = list()
@@ -41,12 +42,17 @@ class Builder:
         return p!=1
 
     def build(self):
-        print("Собираю проект")
+        print("Собираю решение")
         arg1 = '/t:Rebuild'
         arg2 = '/p:Configuration=Release'
         p = subprocess.call([msbuild, self.solution_file, arg1, arg2])
         return p!=1
-
+    def build(self,project):
+        print("Собираю проект из решения")
+        arg1 = '/t:'+project+':Rebuild'
+        arg2 = '/p:Configuration=Release'
+        p = subprocess.call([msbuild, self.solution_file, arg1, arg2])
+        return p!=1
     def find_all_package_configs(self):
         packages = []
         for root, dirs, files in os.walk(self.project_dir + "\\Source"):
@@ -89,7 +95,7 @@ class Builder:
         file_nuspec.write("<title>" + self.project +"</title>")
         file_nuspec.write("<authors>ARMO-Systems developers</authors>")
         file_nuspec.write("<owners>ARMO-Systems</owners>")
-        file_nuspec.write("<copyright>Copyright ©2006-2019 ARMO-Systems</copyright>")
+        file_nuspec.write("<copyright>Copyright ©2006-2020 ARMO-Systems</copyright>")
         file_nuspec.write("<requireLicenseAcceptance>false</requireLicenseAcceptance>")
         file_nuspec.write("<description>Timex Development Team Library</description>")
         file_nuspec.write("<dependencies><group targetFramework=\".NETFramework4.7.2\">")
