@@ -4,6 +4,7 @@ import re
 import shutil
 import subprocess
 from win32api import GetFileVersionInfo, LOWORD, HIWORD
+from datetime import datetime
 
 msbuild = r'c:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe'
 nuget = r'c:\ProgramData\chocolatey\lib\NuGet.CommandLine\tools\nuget.exe'
@@ -89,7 +90,7 @@ class Builder:
         file_nuspec.write("<title>" + self.project +"</title>")
         file_nuspec.write("<authors>ARMO-Systems developers</authors>")
         file_nuspec.write("<owners>ARMO-Systems</owners>")
-        file_nuspec.write("<copyright>Copyright ©2006-2019 ARMO-Systems</copyright>")
+        file_nuspec.write("<copyright>Copyright ©2006-2020 ARMO-Systems</copyright>")
         file_nuspec.write("<requireLicenseAcceptance>false</requireLicenseAcceptance>")
         file_nuspec.write("<description>Timex Development Team Library</description>")
         file_nuspec.write("<dependencies><group targetFramework=\".NETFramework4.7.2\">")
@@ -141,8 +142,35 @@ class Builder:
         self.nuget_run("restore")
         self.nuget_run("update")
 
+    def change_current_version(self, assembly_info):
+        return re.sub(r"\d*\.\d*\.\d*", os.getenv('ArmoLibCurrentVersion'), assembly_info)
+
+    def change_current_year(self, assembly_info):
+        current_year = datetime.today().year
+        return re.sub(r"2004-\d*", "2004-" + str(current_year), assembly_info)
+
+    def change_assembly_version(self, assembly_info_file):
+        print('Updating assembly info version ' + assembly_info_file)
+   
+        with open(assembly_info_file, 'r') as myfile:
+            assembly_info = myfile.read()
+
+        assembly_info = self.change_current_version(assembly_info)
+        assembly_info = self.change_current_year(assembly_info)
+     
+        with open(assembly_info_file, 'w') as myfile:
+            myfile.write(assembly_info)
+
+    def change_assemblies_version(self):
+        for root, dirs, files in os.walk(self.project_dir + "\\Source"):
+            for file in files:
+                if file == 'AssemblyInfo.cs':
+                    full_dir = os.path.join(root, file)
+                    self.change_assembly_version(full_dir)
+
     def create_nuget(self):
         self.cleanup_project_folder()
+        self.change_assemblies_version()
         os.makedirs(self.temp_dir, exist_ok=True)
         self.nuget_run("restore")
         self.build()
